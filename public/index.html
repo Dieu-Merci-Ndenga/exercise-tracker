@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rep Ledger | Exercise Tracker</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="/">REP<span>LEDGER</span></a><span class="status"><i></i> local training log</span></header>
+  <main>
+    <section class="intro"><p class="kicker">Personal performance archive</p><h1>Make every rep<br><em>count.</em></h1><p class="lead">Build a quiet, reliable record of the work you put in.</p></section>
+    <section class="workspace">
+      <div class="panel create-panel">
+        <div class="panel-heading"><span class="number">01</span><div><h2>Create athlete</h2><p>Start a new training history.</p></div></div>
+        <form id="user-form"><label for="username">Username</label><div class="input-action"><input id="username" name="username" placeholder="e.g. alex_chen" required><button type="submit" aria-label="Create athlete">+</button></div></form>
+        <p id="user-message" class="message" role="status"></p>
+      </div>
+      <div class="panel log-panel">
+        <div class="panel-heading"><span class="number">02</span><div><h2>Add a session</h2><p>Log the work while it is fresh.</p></div></div>
+        <form id="exercise-form"><label for="user-select">Athlete</label><select id="user-select" required><option value="">Select an athlete</option></select><div class="form-grid"><div><label for="description">Description</label><input id="description" required placeholder="Morning run"></div><div><label for="duration">Minutes</label><input id="duration" type="number" min="1" required placeholder="45"></div></div><label for="date">Date <span>(optional)</span></label><input id="date" type="date"><button class="primary" type="submit">Record session <span>↗</span></button></form>
+        <p id="exercise-message" class="message" role="status"></p>
+      </div>
+    </section>
+    <section class="history"><div class="history-header"><div><p class="kicker">Your archive</p><h2>Training history</h2></div><button id="refresh" class="icon-button" title="Refresh history">↻</button></div><div id="empty-state" class="empty">Create an athlete and record a session to see the ledger here.</div><div id="history-list"></div></section>
+  </main>
+  <footer>REP LEDGER <span>Built for consistent work.</span></footer>
+  <script src="/app.js"></script>
+</body>
+</html>
